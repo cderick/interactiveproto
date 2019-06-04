@@ -78,6 +78,38 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 		<script>
 			setTimeout(() => {
+				let video = `<video id="myVideop-8-box-190-box-197-scroll" autoplay width="550" style="
+				position: absolute;
+				left: 611px;
+				top: 124px;
+				z-index: 9999999999999;
+				">
+				<source src="./assets/mc_01.mp4" type="video/mp4">
+				</video>`;
+				let video2 = `<video id="myVideop-8-box-190-box-215-scroll" autoplay width="550" style="
+				position: absolute;
+				left: 611px;
+				top: 124px;
+				z-index: 9999999999999;
+				">
+				<source src="./assets/mc_01.mp4" type="video/mp4">
+				</video>`;
+				let video3 = `<video id="myVideop-8-box-190-box-233-scroll" autoplay width="550" style="
+				position: absolute;
+				left: 611px;
+				top: 124px;
+				z-index: 9999999999999;
+				">
+				<source src="./assets/mc_01.mp4" type="video/mp4">
+				</video>`;
+				let video4 = `<video id="myVideop-8-box-190-box-251-scroll" autoplay width="550" style="
+				position: absolute;
+				left: 611px;
+				top: 124px;
+				z-index: 9999999999999;
+				">
+				<source src="./assets/mc_01.mp4" type="video/mp4">
+				</video>`;
 				let c = `<div id="p-5-box-89-cutombox-99" data-component-type="image" class="box hidden pos type-image" style="transform: translate3d(0px, 113px, 0px); opacity: 1;">
 							<style>#p-5-box-89-cutombox-99 {transform: translate3d(0px, 113px, 0px) rotate(0deg);width: 1369px; height: 691px; opacity: 0; -webkit-filter: none; filter: none;}</style>
 							<div class="image-inner borderPos-inside">
@@ -137,6 +169,10 @@
 								to {background-size: 100%;}
 							}
 							</style>`;
+				$('#p-8-box-190-box-197-scroll').prepend(video);
+				$('#p-8-box-190-box-215-scroll').prepend(video2);
+				$('#p-8-box-190-box-233-scroll').prepend(video3);
+				$('#p-8-box-190-box-251-scroll').prepend(video4);
 				$('#p-5-box-89-scroll').append(c);
 				$('#p-5-box-89-scroll').append(b);
 				$('#p-5-box-89-box-86').append(g);
@@ -161,6 +197,27 @@
 					$('#p-5-box-89-box-86').removeClass('hidden');
 					$('#p-5-box-89-cutombox-99').addClass('hidden');
 					$('#p-5-custombox-89-box-102').click();
+				});
+				$('#p-7-box-149-box-154-img-wrapper, #p-8-box-190-box-215-box-213-img-wrapper').click(function() {
+					$('#myVideop-8-box-190-box-197-scroll')[0].pause();
+					$('#myVideop-8-box-190-box-197-scroll')[0].currentTime = 0;
+					$('#myVideop-8-box-190-box-197-scroll')[0].load();
+				});
+				$('#p-8-box-190-box-197-box-195-img-wrapper, #p-8-box-190-box-233-box-230-img-wrapper').click(function() {
+					$('#myVideop-8-box-190-box-215-scroll')[0].pause();
+					$('#myVideop-8-box-190-box-215-scroll')[0].currentTime = 0;
+					$('#myVideop-8-box-190-box-215-scroll')[0].load();
+				});
+				$('#p-8-box-190-box-215-box-210-img-wrapper, #p-8-box-190-box-251-box-248-img-wrapper').click(function() {
+					$('#myVideop-8-box-190-box-233-scroll')[0].pause();
+					$('#myVideop-8-box-190-box-233-scroll')[0].currentTime = 0;
+					$('#myVideop-8-box-190-box-233-scroll')[0].load();
+				});
+
+				$('#p-8-box-190-box-233-box-228-img-wrapper').click(function() {
+					$('#myVideop-8-box-190-box-251-scroll')[0].pause();
+					$('#myVideop-8-box-190-box-251-scroll')[0].currentTime = 0;
+					$('#myVideop-8-box-190-box-251-scroll')[0].load();
 				});
 			}, 2000);
 		</script>
