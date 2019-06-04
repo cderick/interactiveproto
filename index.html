@@ -169,6 +169,28 @@
 								to {background-size: 100%;}
 							}
 							</style>`;
+							let finalStyle = `<style>.fullHide{display: none !important;}</style>`;
+							let rearBox = `<video id="goTorear" class="hidden" autoplay style="
+							width: 100%;
+							top: 114px;
+							position: absolute;
+							z-index: 9999999999999;
+							">
+							<source src="./assets/gotorear.mp4" type="video/mp4">
+							</video>`;
+							let frontBox = `<video id="gotoFront" class="hidden" autoplay style="
+							width: 100%;
+							top: 114px;
+							position: absolute;
+							z-index: 9999999999999;
+							">
+							<source src="./assets/gotofront.mp4" type="video/mp4">
+							</video>`;
+							let housePosition = 0;
+				$('#p-5-box-89-scroll').prepend(rearBox);
+				$('#p-5-box-89-scroll').prepend(frontBox);
+				$('#p-5-box-89').append(finalStyle);
+				$('#p-5-box-89-box-99').addClass('fullHide');
 				$('#p-8-box-190-box-197-scroll').prepend(video);
 				$('#p-8-box-190-box-215-scroll').prepend(video2);
 				$('#p-8-box-190-box-233-scroll').prepend(video3);
@@ -193,6 +215,35 @@
 						}
 					});
 				}, 300);
+				$('#rec-p-5-box-89-box-100').click(function() {
+					if(housePosition === 0){
+						$('#goTorear').removeClass('hidden');
+						setTimeout(() => {
+							$('#goTorear')[0].pause();
+							$('#goTorear')[0].currentTime = 0;
+							$('#goTorear')[0].load();
+							setTimeout(() => {
+								$('#p-5-box-89-box-99').removeClass('fullHide');
+								$('#goTorear').addClass('hidden');
+								$('#p-5-box-89-box-86').addClass('fullHide');
+							}, 2500);
+						}, 100);
+						housePosition = 1;
+					} else {
+						$('#gotoFront').removeClass('hidden');
+						setTimeout(() => {
+							$('#gotoFront')[0].pause();
+							$('#gotoFront')[0].currentTime = 0;
+							$('#gotoFront')[0].load();
+							setTimeout(() => {
+								$('#p-5-box-89-box-99').addClass('fullHide');
+								$('#gotoFront').addClass('hidden');
+								$('#p-5-box-89-box-86').removeClass('fullHide');
+							}, 2500);
+						}, 100);
+						housePosition = 0;
+					}
+				});
 				$('#p-5-box-89-cutombox-99-img-wrapper').click(function() {
 					$('#p-5-box-89-box-86').removeClass('hidden');
 					$('#p-5-box-89-cutombox-99').addClass('hidden');
@@ -213,7 +264,6 @@
 					$('#myVideop-8-box-190-box-233-scroll')[0].currentTime = 0;
 					$('#myVideop-8-box-190-box-233-scroll')[0].load();
 				});
-
 				$('#p-8-box-190-box-233-box-228-img-wrapper').click(function() {
 					$('#myVideop-8-box-190-box-251-scroll')[0].pause();
 					$('#myVideop-8-box-190-box-251-scroll')[0].currentTime = 0;
